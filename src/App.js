@@ -14,6 +14,17 @@ function App() {
     { front: 'paper', back: 'Papier' },
     { front: 'square' , back: 'Platz' },
   ]);
+  // const [score, setScore] = useState(0);
+
+  const addWord = (front, back) => {
+    const newWords = [...words, { front, back }];
+    setWords(newWords);
+  }
+
+  const deleteWord = (front) => {
+    const newWords = words.filter(word => word.front !== front);
+    setWords(newWords);
+  }
 
   return (
     <div className="App">
@@ -21,8 +32,8 @@ function App() {
         Dictionary App
       </header>
       <main>
-        <WordForm />
-        <CardsContainer words={words} />
+        <WordForm addWord={addWord} />
+        <CardsContainer words={words} deleteWord={deleteWord} />
       </main>
     </div>
   );

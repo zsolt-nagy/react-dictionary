@@ -13,4 +13,23 @@
     align-items: center;
     cursor: pointer;
     user-select: none;
+    position: relative;
+}
+
+.delete-card {
+    font-weight: bold;
+    font-size: 24px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute; 
+    right: 10px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.delete-card:hover {
+    background-color: lightgreen;
 }
